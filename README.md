@@ -132,3 +132,33 @@ lib/
 - Camera BP estimates are **not** written to Health Connect / Apple Health; only HR, breathing
   rate and cuff BP are.
 - Users can export everything (CSV) or delete everything from Profile.
+
+---
+
+## Releasing updates
+
+The app checks for updates about 3 seconds after the home screen opens, and from
+**Profile → Check for updates**.
+
+| Platform | Optional update | Required update |
+|---|---|---|
+| Android | Downloads in the background inside the app, then asks the user to restart | Play's full-screen update screen |
+| iOS | Dialog with release notes and an **Update now** button that opens the App Store | Same dialog with no "Later" button |
+
+**How to trigger each one**
+1. **Normal release:** raise `version:` in `pubspec.yaml` (for example `1.0.1+2`) and publish. Users
+   see the optional prompt. Choosing "Later" hides it for 24 h.
+2. **Required on Android:** set the release's *in-app update priority* to **4 or 5**. Priority can
+   only be set with the Play Developer API (`inAppUpdatePriority`), not in the Play Console UI.
+3. **Required on both platforms:** host a JSON file and set `AppConstants.updateConfigUrl` to it:
+   ```json
+   { "android": { "min_version": "1.2.0" }, "ios": { "min_version": "1.2.0" } }
+   ```
+   Any installed version below `min_version` must update before it can be used.
+
+**Notes**
+- In-app updates on Android only work when the app was installed **from Google Play**. To test,
+  use Play's internal app sharing or an internal-testing track. Debug and side-loaded builds skip
+  the automatic check, and the manual check says why.
+- The App Store lookup can lag a few hours behind a new release.
+- Phones with store auto-update turned on still update the app on their own, as usual.
