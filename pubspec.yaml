@@ -54,6 +54,9 @@ dependencies:
   flutter_animate: ^4.5.2
   health: ^13.3.2
   uuid: ^4.6.0
+  in_app_update: ^5.0.0
+  package_info_plus: ^10.2.2
+  url_launcher: ^6.3.3
 
 dev_dependencies:
   flutter_test:

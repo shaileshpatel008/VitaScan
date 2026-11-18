@@ -10,4 +10,5 @@ class StorageKeys {
 
   static const String profile = 'profile';
   static const String settings = 'settings';
+  static const String updateSnooze = 'update_snooze';
 }

@@ -9,6 +9,7 @@ import '../../data/repositories/settings_repository.dart';
 import '../../data/repositories/user_repository.dart';
 import '../network/api_client.dart';
 import '../network/network_info.dart';
+import 'app_update_service.dart';
 import 'export_service.dart';
 import 'health_sync_service.dart';
 import 'notification_service.dart';
@@ -39,5 +40,6 @@ class DependencyInjection {
     Get.put(HealthSyncService(), permanent: true);
     Get.put(PdfReportService(), permanent: true);
     Get.put(ExportService(), permanent: true);
+    await Get.putAsync(() => AppUpdateService(local).init(), permanent: true);
   }
 }

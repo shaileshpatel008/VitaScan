@@ -122,14 +122,23 @@ class SettingsView extends GetView<SettingsController> {
             ).entrance(7),
             const SectionLabel('About'),
             SettingsTile(
+              icon: Icons.system_update_rounded,
+              title: 'Check for updates',
+              subtitle: 'Version ${c.appVersion}',
+              onTap: c.checkingUpdate ? null : c.checkForUpdates,
+              trailing: c.checkingUpdate
+                  ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2))
+                  : chevron,
+            ).entrance(8),
+            SettingsTile(
               icon: Icons.info_outline_rounded,
               title: 'About & medical disclaimer',
               onTap: c.showAbout,
               trailing: chevron,
-            ).entrance(8),
+            ).entrance(9),
             const SizedBox(height: 16),
             Text(
-              '${AppConstants.appName} v${AppConstants.appVersion} · For wellness use only, not a medical device.',
+              '${AppConstants.appName} v${c.appVersion} (${c.buildNumber}) · For wellness use only, not a medical device.',
               style: AppTextStyles.caption,
             ),
           ],

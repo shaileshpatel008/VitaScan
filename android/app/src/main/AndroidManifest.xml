@@ -86,6 +86,11 @@
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+        <!-- Opening store / web links (url_launcher) -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
         <!-- Needed to check whether Health Connect is installed -->
         <package android:name="com.google.android.apps.healthdata" />
     </queries>

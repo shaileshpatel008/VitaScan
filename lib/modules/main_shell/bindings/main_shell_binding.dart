@@ -24,6 +24,7 @@ class MainShellBinding extends Bindings {
         notifications: Get.find(),
         health: Get.find(),
         export: Get.find(),
+        updates: Get.find(),
       ),
     );
   }

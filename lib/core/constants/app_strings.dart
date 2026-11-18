@@ -106,6 +106,24 @@ class AppStrings {
   static const reminderNotificationTitle = 'Time for your scan';
   static const reminderNotificationBody = 'Sit, relax for a minute, then take a 45-second fingertip scan.';
 
+  // App updates
+  static const updateTitle = 'A new version is ready';
+  static const updateBody = 'Update VitaScan to get the latest improvements and fixes. It only takes a moment.';
+  static const updateRequiredTitle = 'Please update to continue';
+  static const updateRequiredBody =
+      'This version of VitaScan is no longer supported. Update now to keep your readings accurate and your data safe.';
+  static const updateNow = 'Update now';
+  static const updateLater = 'Later';
+  static const updateDownloadedTitle = 'Update downloaded';
+  static const updateDownloadedBody = 'Restart VitaScan to finish installing. It takes just a few seconds.';
+  static const updateRestart = 'Restart now';
+  static const updateUpToDate = 'You have the latest version of VitaScan.';
+  static const updateDownloading = 'Downloading the update in the background. You can keep using the app.';
+  static const updateFailed = 'The update couldn\'t be downloaded. We\'ll try again later.';
+  static const updateNotFromStore =
+      'This copy wasn\'t installed from the store, so it can\'t update itself. Install VitaScan from the store to get updates.';
+  static const updateCheckFailed = 'We couldn\'t check for updates. Please check your internet connection.';
+
   // Generic
   static const somethingWrong = 'Something went wrong. Please try again.';
   static const noInternet = 'No internet connection. Please check your network.';

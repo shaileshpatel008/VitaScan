@@ -54,4 +54,13 @@ class AppConstants {
   // ---------------- Cloud backup (optional) ----------------
   /// Leave empty to keep the app 100% offline. Set to your API to enable backup.
   static const String backupBaseUrl = '';
+
+  // ---------------- App updates ----------------
+  /// Optional JSON file you host (your website, GitHub Pages, etc.) to force an
+  /// update: {"android": {"min_version": "1.2.0"}, "ios": {"min_version": "1.2.0"},
+  /// "message": "..."}. Leave empty to rely on the stores only.
+  static const String updateConfigUrl = '';
+
+  /// After "Later", don't ask about the same version again for this long.
+  static const int updateRemindAfterHours = 24;
 }

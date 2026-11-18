@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/network/api_exception.dart';
+import '../../../core/services/app_update_service.dart';
 import '../../../core/services/export_service.dart';
 import '../../../core/services/health_sync_service.dart';
 import '../../../core/services/notification_service.dart';
@@ -30,6 +31,7 @@ class SettingsController extends GetxController {
     required this._notifications,
     required this._health,
     required this._export,
+    required this._updates,
   });
 
   final UserRepository _users;
@@ -41,6 +43,7 @@ class SettingsController extends GetxController {
   final NotificationService _notifications;
   final HealthSyncService _health;
   final ExportService _export;
+  final AppUpdateService _updates;
 
   final busy = false.obs;
 
@@ -48,6 +51,11 @@ class SettingsController extends GetxController {
   AppSettings get settings => _settings.settings.value;
   int get calibrationCount => _calibration.points.length;
   int get readingCount => _readings.readings.length;
+  String get appVersion => _updates.version.value;
+  String get buildNumber => _updates.buildNumber.value;
+  bool get checkingUpdate => _updates.checking.value;
+
+  void checkForUpdates() => _updates.checkManually();
 
   void editProfile() => Get.toNamed(AppRoutes.profileSetup, arguments: true);
 
