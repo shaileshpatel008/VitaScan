@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wellumi/data/models/app_settings.dart';
 import 'package:wellumi/data/models/user_profile.dart';
 import 'package:wellumi/data/repositories/settings_repository.dart';
@@ -30,6 +31,15 @@ class _FakeUsers extends GetxService implements UserRepository {
 void main() {
   testWidgets('splash moves on to the welcome screen for a new user', (tester) async {
     Get.testMode = true;
+    // Load the bundled fonts up front (real async I/O), so no font finishes
+    // loading after the test ends and schedules a stray frame.
+    await tester.runAsync(() async {
+      for (final w in [FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700]) {
+        GoogleFonts.dmSans(fontWeight: w);
+      }
+      GoogleFonts.fraunces(fontWeight: FontWeight.w600);
+      await GoogleFonts.pendingFonts();
+    });
     Get.put<SettingsRepository>(_FakeSettings());
     Get.put<UserRepository>(_FakeUsers());
 

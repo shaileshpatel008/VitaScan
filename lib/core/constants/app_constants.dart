@@ -6,6 +6,23 @@ class AppConstants {
   static const String appName = 'Wellumi';
   static const String appVersion = '1.0.0';
 
+  // ---------------- Feature switches ----------------
+  /// Health Connect / Apple Health sync. Hidden in v1: turning it on also needs
+  /// the Android health permissions restored (see AndroidManifest.xml) and the
+  /// Play Console Health Connect declaration.
+  static const bool enableHealthSync = false;
+
+  /// Cloud backup needs a server ([backupBaseUrl]); hidden until one exists.
+  static const bool enableCloudBackup = false;
+
+  /// Camera SpO2 is the least reliable estimate; hidden for the first release.
+  static const bool showSpo2Estimate = false;
+
+  // ---------------- Legal ----------------
+  /// Public pages hosted on GitHub Pages (see legal/README.md for setup).
+  static const String privacyPolicyUrl = 'https://shaileshpatel008.github.io/wellumi-legal/privacy-policy.html';
+  static const String termsUrl = 'https://shaileshpatel008.github.io/wellumi-legal/terms.html';
+
   // ---------------- Scan ----------------
   /// Seconds of good finger contact needed for one measurement.
   static const int scanDurationSeconds = 45;

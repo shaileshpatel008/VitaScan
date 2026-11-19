@@ -84,20 +84,22 @@ class SettingsView extends GetView<SettingsController> {
               ),
             ).entrance(2),
             const SectionLabel('Data'),
-            SettingsTile(
-              icon: Icons.sync_rounded,
-              title: 'Sync with Health Connect / Apple Health',
-              subtitle: 'Heart rate, breathing & cuff BP',
-              trailing: c.busy.value
-                  ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2))
-                  : Switch(value: s.healthSyncEnabled, onChanged: c.toggleHealthSync),
-            ).entrance(3),
-            SettingsTile(
-              icon: Icons.cloud_outlined,
-              title: 'Cloud backup',
-              subtitle: s.cloudBackupEnabled ? 'On' : 'Off: data stays on this phone',
-              trailing: Switch(value: s.cloudBackupEnabled, onChanged: c.toggleBackup),
-            ).entrance(4),
+            if (AppConstants.enableHealthSync)
+              SettingsTile(
+                icon: Icons.sync_rounded,
+                title: 'Sync with Health Connect / Apple Health',
+                subtitle: 'Heart rate, breathing & cuff BP',
+                trailing: c.busy.value
+                    ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2))
+                    : Switch(value: s.healthSyncEnabled, onChanged: c.toggleHealthSync),
+              ).entrance(3),
+            if (AppConstants.enableCloudBackup)
+              SettingsTile(
+                icon: Icons.cloud_outlined,
+                title: 'Cloud backup',
+                subtitle: s.cloudBackupEnabled ? 'On' : 'Off: data stays on this phone',
+                trailing: Switch(value: s.cloudBackupEnabled, onChanged: c.toggleBackup),
+              ).entrance(4),
             SettingsTile(
               icon: Icons.track_changes_rounded,
               title: 'BP calibration',
@@ -136,6 +138,18 @@ class SettingsView extends GetView<SettingsController> {
               onTap: c.showAbout,
               trailing: chevron,
             ).entrance(9),
+            SettingsTile(
+              icon: Icons.privacy_tip_outlined,
+              title: 'Privacy policy',
+              onTap: c.openPrivacyPolicy,
+              trailing: const Icon(Icons.open_in_new_rounded, size: 18, color: AppColors.muted),
+            ).entrance(10),
+            SettingsTile(
+              icon: Icons.description_outlined,
+              title: 'Terms of use',
+              onTap: c.openTerms,
+              trailing: const Icon(Icons.open_in_new_rounded, size: 18, color: AppColors.muted),
+            ).entrance(11),
             const SizedBox(height: 16),
             Text(
               '${AppConstants.appName} v${c.appVersion} (${c.buildNumber}) · For wellness use only, not a medical device.',

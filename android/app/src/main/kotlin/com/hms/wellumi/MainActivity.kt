@@ -1,4 +1,4 @@
-package com.wellumi.app
+package com.hms.wellumi
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

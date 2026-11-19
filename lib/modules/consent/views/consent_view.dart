@@ -96,7 +96,13 @@ class ConsentView extends GetView<ConsentController> {
                   ).entrance(6),
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: TextButton(onPressed: c.showTerms, child: const Text('Read Terms & Privacy Policy')),
+                    child: Wrap(
+                      spacing: 4,
+                      children: [
+                        TextButton(onPressed: c.openTerms, child: const Text('Terms of Use')),
+                        TextButton(onPressed: c.openPrivacyPolicy, child: const Text('Privacy Policy')),
+                      ],
+                    ),
                   ),
                 ],
               ),

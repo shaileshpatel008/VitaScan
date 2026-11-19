@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:health/health.dart';
 
 import '../../data/models/vital_reading.dart';
+import '../constants/app_constants.dart';
 import '../utils/app_logger.dart';
 
 /// Writes readings to Google Health Connect / Apple Health.
@@ -26,11 +27,13 @@ class HealthSyncService extends GetxService {
   }
 
   Future<bool> connect() async {
+    if (!AppConstants.enableHealthSync) return false;
     try {
       await _configure();
+      // Write-only: the app never reads from Health, so it asks for no read access.
       return await _health.requestAuthorization(
         _types,
-        permissions: List.filled(_types.length, HealthDataAccess.READ_WRITE),
+        permissions: List.filled(_types.length, HealthDataAccess.WRITE),
       );
     } catch (e, st) {
       AppLogger.error('Health authorization failed', e, st);
@@ -39,6 +42,7 @@ class HealthSyncService extends GetxService {
   }
 
   Future<void> sync(VitalReading r) async {
+    if (!AppConstants.enableHealthSync) return;
     try {
       await _configure();
       final start = r.timestamp;

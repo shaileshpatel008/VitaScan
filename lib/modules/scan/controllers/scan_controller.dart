@@ -220,7 +220,7 @@ class ScanController extends GetxController with WidgetsBindingObserver {
       hrvRmssd: double.parse(r.rmssdMs.toStringAsFixed(1)),
       stressScore: VitalsEstimator.stressScore(rmssdMs: r.rmssdMs, heartRate: r.heartRate),
       breathingRate: r.breathingRate?.round(),
-      spo2: r.spo2?.round(),
+      spo2: AppConstants.showSpo2Estimate ? r.spo2?.round() : null,
       signalQuality: r.quality,
       rawSystolic: raw.systolic,
       rawDiastolic: raw.diastolic,

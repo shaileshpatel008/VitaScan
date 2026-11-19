@@ -119,7 +119,16 @@ class PdfReportService {
               border: pw.Border(bottom: pw.BorderSide(color: _line, width: 0.5)),
             ),
             cellAlignment: pw.Alignment.centerLeft,
-            headers: ['Date', 'Source', 'BP (mmHg)', 'HR', 'HRV', 'Breathing', 'SpO2', if (includeNotes) 'Note'],
+            headers: [
+              'Date',
+              'Source',
+              'BP (mmHg)',
+              'HR',
+              'HRV',
+              'Breathing',
+              if (AppConstants.showSpo2Estimate) 'SpO2',
+              if (includeNotes) 'Note',
+            ],
             data: sorted.reversed
                 .map(
                   (r) => [
@@ -129,7 +138,7 @@ class PdfReportService {
                     r.heartRate?.toString() ?? '--',
                     r.hrvRmssd == null ? '--' : '${r.hrvRmssd!.round()} ms',
                     r.breathingRate == null ? '--' : '${r.breathingRate}/min',
-                    r.spo2 == null ? '--' : '~${r.spo2}%',
+                    if (AppConstants.showSpo2Estimate) r.spo2 == null ? '--' : '~${r.spo2}%',
                     if (includeNotes) r.note ?? '',
                   ],
                 )

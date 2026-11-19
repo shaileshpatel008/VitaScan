@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/app_strings.dart';
@@ -56,6 +57,15 @@ class SettingsController extends GetxController {
   bool get checkingUpdate => _updates.checking.value;
 
   void checkForUpdates() => _updates.checkManually();
+
+  Future<void> openPrivacyPolicy() => _openLink(AppConstants.privacyPolicyUrl);
+
+  Future<void> openTerms() => _openLink(AppConstants.termsUrl);
+
+  Future<void> _openLink(String url) async {
+    final ok = await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+    if (!ok) AppMessenger.error(AppStrings.somethingWrong);
+  }
 
   void editProfile() => Get.toNamed(AppRoutes.profileSetup, arguments: true);
 
@@ -188,7 +198,8 @@ class SettingsController extends GetxController {
     AppMessenger.alert(
       title: '${AppConstants.appName} ${AppConstants.appVersion}',
       message:
-          'Wellumi estimates heart rate, heart-rate variability, stress, breathing rate, oxygen and blood pressure '
+          'Wellumi estimates heart rate, heart-rate variability, stress, breathing rate'
+          '${AppConstants.showSpo2Estimate ? ', oxygen' : ''} and blood pressure '
           'from your fingertip using the phone camera.\n\n'
           'It is a wellness app, not a medical device. It does not diagnose or treat any condition. '
           'Always follow your doctor\'s advice and use a validated cuff for medical decisions.',

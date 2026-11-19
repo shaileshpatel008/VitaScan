@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/services/permission_service.dart';
 import '../../../core/utils/app_messenger.dart';
@@ -34,14 +36,12 @@ class ConsentController extends GetxController {
     AppMessenger.success('You\'re all set. Take your first scan whenever you\'re ready.', title: 'Welcome, $name!');
   }
 
-  void showTerms() {
-    AppMessenger.alert(
-      title: 'Terms & Privacy',
-      message:
-          'Wellumi is a wellness app and does not diagnose, treat or prevent any disease. '
-          'Your readings are stored encrypted on this phone. We do not sell or share your data. '
-          'You can export or delete everything at any time from Profile → Data.',
-      buttonText: 'Close',
-    );
+  Future<void> openPrivacyPolicy() => _open(AppConstants.privacyPolicyUrl);
+
+  Future<void> openTerms() => _open(AppConstants.termsUrl);
+
+  Future<void> _open(String url) async {
+    final ok = await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+    if (!ok) AppMessenger.error(AppStrings.somethingWrong);
   }
 }

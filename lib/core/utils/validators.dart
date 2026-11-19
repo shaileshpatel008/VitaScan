@@ -22,7 +22,15 @@ class Validators {
     return null;
   };
 
-  static final age = intRange('age', 13, 110);
+  /// Wellumi is for adults (matches the Play Console target audience: 18+).
+  static String? age(String? v) {
+    final n = int.tryParse(v?.trim() ?? '');
+    if (n == null) return 'Enter age';
+    if (n < 18) return 'Wellumi is for adults 18+';
+    if (n > 110) return '18–110';
+    return null;
+  }
+
   static final heightCm = decimalRange('height', 100, 230);
   static final weightKg = decimalRange('weight', 25, 250);
   static final systolic = intRange('systolic', 70, 250);

@@ -16,7 +16,7 @@ class AppStrings {
   static const consentTitle = 'How your data is used';
   static const consentWellnessTitle = 'For wellness, not diagnosis';
   static const consentWellnessBody =
-      'Wellumi is not a medical device. Blood pressure and oxygen values are estimates. Always confirm with a doctor.';
+      'Wellumi is not a medical device. Blood pressure readings are estimates. Always confirm with a doctor.';
   static const consentCameraTitle = 'Camera only during a scan';
   static const consentCameraBody =
       'The rear camera and flash are used only while you scan. No photos or video are saved.';

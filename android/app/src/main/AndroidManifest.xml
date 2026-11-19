@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- Fingertip scan: rear camera + torch -->
     <uses-permission
         android:name="android.permission.CAMERA"/>
@@ -22,19 +23,18 @@
     <!-- Optional cloud backup -->
     <uses-permission
         android:name="android.permission.INTERNET"/>
-    <!-- Health Connect (optional sync) -->
-    <uses-permission
-        android:name="android.permission.health.READ_HEART_RATE"/>
-    <uses-permission
-        android:name="android.permission.health.WRITE_HEART_RATE"/>
-    <uses-permission
-        android:name="android.permission.health.READ_RESPIRATORY_RATE"/>
-    <uses-permission
-        android:name="android.permission.health.WRITE_RESPIRATORY_RATE"/>
-    <uses-permission
-        android:name="android.permission.health.READ_BLOOD_PRESSURE"/>
-    <uses-permission
-        android:name="android.permission.health.WRITE_BLOOD_PRESSURE"/>
+    <!-- Health Connect sync is hidden in v1 (AppConstants.enableHealthSync = false).
+         These removals keep any health permission out of the final manifest so the
+         Play Console doesn't require a Health Connect declaration. To enable the
+         feature later: replace each tools:node="remove" with a normal declaration,
+         and add back the rationale activity-alias and the healthdata <queries> entry
+         (see git history / README "Re-enabling Health Connect"). -->
+    <uses-permission android:name="android.permission.health.READ_HEART_RATE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.health.WRITE_HEART_RATE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.health.READ_RESPIRATORY_RATE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.health.WRITE_RESPIRATORY_RATE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.health.READ_BLOOD_PRESSURE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.health.WRITE_BLOOD_PRESSURE" tools:node="remove"/>
     <application
         android:label="Wellumi"
         android:allowBackup="false"
@@ -58,25 +58,7 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <!-- Health Connect: privacy-policy rationale (Android 13 and below) -->
-            <intent-filter>
-                <action
-                    android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE"/>
-            </intent-filter>
         </activity>
-        <!-- Health Connect: privacy-policy rationale (Android 14+) -->
-        <activity-alias
-            android:name="ViewPermissionUsageActivity"
-            android:exported="true"
-            android:targetActivity=".MainActivity"
-            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.VIEW_PERMISSION_USAGE"/>
-                <category
-                    android:name="android.intent.category.HEALTH_PERMISSIONS"/>
-            </intent-filter>
-        </activity-alias>
         <!-- Scheduled reminders (flutter_local_notifications) -->
         <receiver
             android:exported="false"
@@ -113,8 +95,5 @@
             <data
                 android:scheme="https"/>
         </intent>
-        <!-- Needed to check whether Health Connect is installed -->
-        <package
-            android:name="com.google.android.apps.healthdata"/>
     </queries>
 </manifest>
