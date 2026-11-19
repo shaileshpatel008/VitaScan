@@ -1,12 +1,13 @@
 # Wellumi legal pages (Privacy Policy & Terms)
 
-Published with **GitHub Pages** from this folder (`docs/` on the `main` branch).
+Published with **GitHub Pages**. Pages serves the repository root of `main`, so these files
+are live under `/docs/`:
 
 | Page | Live URL |
 |---|---|
-| Landing | <https://shaileshpatel008.github.io/VitaScan/> |
-| Privacy Policy | <https://shaileshpatel008.github.io/VitaScan/privacy-policy.html> |
-| Terms of Use | <https://shaileshpatel008.github.io/VitaScan/terms.html> |
+| Landing | <https://shaileshpatel008.github.io/VitaScan/docs/> |
+| Privacy Policy | <https://shaileshpatel008.github.io/VitaScan/docs/privacy-policy.html> |
+| Terms of Use | <https://shaileshpatel008.github.io/VitaScan/docs/terms.html> |
 
 The app opens these links from the consent screen and Profile
 (`AppConstants.privacyPolicyUrl` / `AppConstants.termsUrl`). Use the Privacy Policy link in
@@ -14,10 +15,12 @@ Play Console → **App content → Privacy policy**.
 
 `.nojekyll` makes GitHub serve the HTML files exactly as they are.
 
-## Turning on GitHub Pages (once)
+## GitHub Pages setting: don't change it
 
-Repository **Settings → Pages** → Source: *Deploy from a branch* → Branch: `main`,
-folder: `/docs` → **Save**. The site is live 1–2 minutes later.
+Repository **Settings → Pages** is set to *Deploy from a branch*, `main`, folder `/ (root)`.
+Keep it that way: switching the folder to `/docs` would move the pages to different
+addresses and break the links in the app and in Play Console. Also don't rename or move
+this folder or the repository for the same reason.
 
 ## Editing
 

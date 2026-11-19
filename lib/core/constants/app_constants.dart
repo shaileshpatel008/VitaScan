@@ -20,8 +20,8 @@ class AppConstants {
 
   // ---------------- Legal ----------------
   /// Public pages hosted on GitHub Pages (docs/ folder; see docs/README.md).
-  static const String privacyPolicyUrl = 'https://shaileshpatel008.github.io/VitaScan/privacy-policy.html';
-  static const String termsUrl = 'https://shaileshpatel008.github.io/VitaScan/terms.html';
+  static const String privacyPolicyUrl = 'https://shaileshpatel008.github.io/VitaScan/docs/privacy-policy.html';
+  static const String termsUrl = 'https://shaileshpatel008.github.io/VitaScan/docs/terms.html';
 
   // ---------------- Scan ----------------
   /// Seconds of good finger contact needed for one measurement.

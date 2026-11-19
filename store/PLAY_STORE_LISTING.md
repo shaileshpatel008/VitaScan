@@ -111,7 +111,7 @@ policy. **Website:** your GitHub Pages index (optional).
 
 | Form | Answer |
 |---|---|
-| **Privacy policy** | `https://shaileshpatel008.github.io/VitaScan/privacy-policy.html` (published from this repo's `docs/` folder; see `docs/README.md`) |
+| **Privacy policy** | `https://shaileshpatel008.github.io/VitaScan/docs/privacy-policy.html` (published from this repo's `docs/` folder; see `docs/README.md`) |
 | **Ads** | No, the app does not contain ads |
 | **App access** | All functionality is available without special access (no login) |
 | **Content rating** | Fill in the IARC questionnaire honestly; Wellumi has no violence, sexual content, gambling, user chat or purchases. Expect "Everyone"/"3+" |
