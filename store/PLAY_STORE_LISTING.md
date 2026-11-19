@@ -48,49 +48,66 @@ The number after `+` must always increase.
 Wellumi: Heart Rate & Stress
 ```
 
-**Short description** (73/80)
+**Short description** (76/80)
 ```
-Check heart rate, HRV, stress & breathing with your fingertip and camera.
+Check heart rate, HRV, stress & breathing in 45 seconds with your fingertip.
 ```
 
-**Full description** (2068/4000)
+**Full description** (3172/4000)
 ```
-Wellumi turns your phone into a calm daily check-in for your well-being. Place your fingertip over the rear camera and flash for 45 seconds, and Wellumi reads the tiny changes in light caused by your pulse.
+Wellumi turns your phone into a calm, private daily check-in for your well-being. Rest your fingertip on the rear camera and flash for 45 seconds, and Wellumi reads the tiny changes in light caused by each heartbeat. No wearable, no extra device, no sign-up.
 
-WHAT YOU CAN TRACK
+WHAT YOU CAN CHECK
 • Heart rate: your resting pulse in beats per minute
-• Heart-rate variability (HRV): a window into recovery and balance
-• Stress level: a simple score based on your HRV and heart rate
+• Heart-rate variability (HRV): an insight into recovery and balance
+• Stress level: a simple Low / Moderate / High score based on your HRV and heart rate
 • Breathing rate: breaths per minute, estimated from your pulse rhythm
-• Blood pressure estimate: a personal trend estimate that improves when you add readings from a home BP cuff
+• Blood pressure estimate: a personal trend estimate that becomes more tailored to you as you add readings from a home BP cuff
 
-HOW IT WORKS
-1. Sit and rest for a minute.
-2. Cover the rear camera and flash lightly with your fingertip.
-3. Hold still for 45 seconds while Wellumi shows your live pulse wave.
-4. See your results, with clear explanations and colour-coded ranges.
+A GUIDED, STRESS-FREE SCAN
+• Step-by-step animated guide showing exactly where to place your finger
+• The scan starts by itself once your fingertip is detected
+• Watch your live pulse wave and heart rate while you scan
+• Real-time signal check, with gentle prompts if your finger moves
+• If a reading isn't clear, Wellumi explains why and how to fix it, instead of showing a wrong number
 
-DESIGNED TO HELP YOU BUILD A HABIT
+CLEAR, EASY-TO-READ RESULTS
+• Large, simple numbers with plain-language explanations
+• Colour-coded blood pressure scale from normal to high
+• Helpful guidance if a reading looks unusual, including when to talk to a doctor
+
+TRACK YOUR TRENDS
 • History charts for the last week, month or three months
-• Add readings from a blood pressure cuff and calibrate your estimates
-• PDF reports to share with your doctor or family
-• Gentle morning and evening scan reminders
-• Friendly guidance if a scan doesn't go to plan
+• Every reading saved with its date, time and source (scan or cuff)
+• Weekly trend at a glance on your home screen
+• Daily wellness tips to help you get more consistent readings
+
+ADD CUFF READINGS AND CALIBRATE
+• Log blood pressure and pulse from any home or pharmacy BP cuff
+• Enter a cuff reading within 10 minutes of a scan to calibrate your camera estimate
+• After three calibrations, your blood pressure estimates are tuned to you
+
+REPORTS AND REMINDERS
+• Create a clean PDF health summary for the last 7 days, 30 days or any dates you choose
+• Share it with your doctor or family, or save and print it
+• Morning and evening reminders at times you choose, to build a daily habit
+• Export all your readings as a CSV file at any time
 
 PRIVATE BY DESIGN
 • No account or sign-up needed
 • Your readings stay on your phone, encrypted
-• No ads, no tracking, no data selling
-• Camera images are never saved: only the light level is used
-• Export or delete all your data at any time
+• No ads, no tracking and no data selling
+• Camera images are never saved: only the light level is used, during the scan
+• Works offline
+• Delete all your data at any time from Profile
 
 DEVICE COMPATIBILITY
-Wellumi needs Android 8.0 or later and a phone with a rear camera and flash (LED torch). Results depend on your phone's camera and on following the scan steps; most modern phones work well.
+Wellumi needs Android 8.0 or later and a phone with a rear camera and flash (LED torch). Results depend on your phone's camera and on following the scan steps; most modern phones work well. For the best readings, sit still, rest for a minute first, and touch the camera lightly.
 
 IMPORTANT
-Wellumi is a wellness app, not a medical device. It does not diagnose, treat, cure or prevent any disease. All readings, including the blood pressure estimate, are estimates for personal tracking and may differ from medical devices. Always consult a doctor about your health and before making any medical decision. If you feel unwell, have chest pain or shortness of breath, contact emergency services immediately.
+Wellumi is a wellness app, not a medical device. It does not diagnose, treat, cure or prevent any disease. All readings, including the blood pressure estimate, are estimates for personal tracking and may differ from medical devices. Always consult a doctor about your health and before making any medical decision. If you feel unwell, or have chest pain or shortness of breath, contact emergency services immediately.
 
-Wellumi is for adults aged 18 and over.
+Wellumi is designed for adults aged 18 and over.
 ```
 
 **Graphics**
