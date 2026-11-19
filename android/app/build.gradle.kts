@@ -17,7 +17,7 @@ if (hasUploadKey) {
 }
 
 android {
-    namespace = "com.hms.wellumi"
+    namespace = "com.shaileshpatel008.wellumiapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -29,7 +29,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.hms.wellumi"
+        applicationId = "com.shaileshpatel008.wellumiapp"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         // Android 8.0+ (also what Health Connect needs when it's switched on)
