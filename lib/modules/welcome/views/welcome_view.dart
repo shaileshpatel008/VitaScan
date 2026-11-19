@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constants/app_assets.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../routes/app_routes.dart';
@@ -24,11 +25,11 @@ class WelcomeView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              Image.asset(
+                AppAssets.appIcon,
                 width: 64,
                 height: 64,
-                decoration: BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.circular(20)),
-                child: const Icon(Icons.monitor_heart_rounded, color: Colors.white, size: 34),
+                semanticLabel: '${AppConstants.appName} logo',
               ).animate().scale(duration: 500.ms, curve: Curves.easeOutBack),
               const SizedBox(height: 28),
               Text(

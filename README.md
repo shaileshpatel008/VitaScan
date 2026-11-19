@@ -162,3 +162,18 @@ The app checks for updates about 3 seconds after the home screen opens, and from
   the automatic check, and the manual check says why.
 - The App Store lookup can lag a few hours behind a new release.
 - Phones with store auto-update turned on still update the app on their own, as usual.
+
+---
+
+## Branding
+
+Artwork lives in `assets/branding/` (SVG sources in `assets/branding/src/`, rendered PNGs next to them,
+`branding_preview.png` shows every variant). After changing the artwork, regenerate the platform files:
+
+```bash
+dart run flutter_launcher_icons        # app icons (iOS, Android adaptive + themed)
+dart run flutter_native_splash:create  # launch splash (iOS, Android incl. Android 12+)
+```
+
+`flutter_native_splash` reformats `AndroidManifest.xml` and can drop
+`android:screenOrientation="portrait"`; check that line is still there afterwards.

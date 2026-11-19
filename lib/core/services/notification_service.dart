@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui' show Color;
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
@@ -25,7 +26,7 @@ class NotificationService extends GetxService {
       AppLogger.error('Timezone lookup failed, using UTC', e);
     }
     const settings = InitializationSettings(
-      android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      android: AndroidInitializationSettings('@drawable/ic_stat_wellumi'),
       iOS: DarwinInitializationSettings(
         requestAlertPermission: false,
         requestBadgePermission: false,
@@ -64,6 +65,8 @@ class NotificationService extends GetxService {
           'scan_reminders',
           'Scan reminders',
           channelDescription: 'Daily reminders to take a vitals scan',
+          icon: '@drawable/ic_stat_wellumi',
+          color: Color(0xFF0E6B63),
           importance: Importance.defaultImportance,
           priority: Priority.defaultPriority,
         ),
