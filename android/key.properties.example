@@ -1,7 +1,0 @@
-# Template for the release upload key. Copy to android/key.properties (same folder)
-# and put your real passwords there. key.properties and *.jks are git-ignored;
-# never commit them: this repository is public.
-storePassword=YOUR_KEYSTORE_PASSWORD
-keyPassword=YOUR_KEY_PASSWORD
-keyAlias=upload
-storeFile=/Users/Shailesh/Documents/VitaScan/Keystores/wellumi-upload-keystore.jks
