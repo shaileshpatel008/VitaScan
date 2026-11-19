@@ -53,7 +53,7 @@ class ProfileSetupView extends GetView<ProfileSetupController> {
                       AppTextField(
                         label: 'Full name',
                         controller: c.nameCtrl,
-                        hint: 'e.g. Aarav Shah',
+                        hint: 'e.g. John Smith',
                         validator: Validators.name,
                         textCapitalization: TextCapitalization.words,
                         maxLength: 40,
