@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.vitascan.vitascan"
+    namespace = "com.wellumi.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -17,7 +17,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.vitascan.vitascan"
+        applicationId = "com.wellumi.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         // Health Connect needs API 26+

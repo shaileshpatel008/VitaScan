@@ -49,7 +49,7 @@ class SplashView extends GetView<SplashController> {
             ).animate().fadeIn(delay: 250.ms, duration: 500.ms).slideY(begin: 0.3, end: 0),
             const SizedBox(height: 6),
             Text(
-              'Your pulse, at your fingertip',
+              'Your well-being, brought to light',
               style: AppTextStyles.body(15, color: Colors.white70),
             ).animate().fadeIn(delay: 500.ms, duration: 500.ms),
           ],

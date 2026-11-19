@@ -24,7 +24,7 @@
     <uses-permission android:name="android.permission.health.WRITE_BLOOD_PRESSURE" />
 
     <application
-        android:label="VitaScan"
+        android:label="Wellumi"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:name="${applicationName}"

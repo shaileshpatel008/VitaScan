@@ -1,4 +1,4 @@
-package com.vitascan.vitascan
+package com.wellumi.app
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

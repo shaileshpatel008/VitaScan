@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>VitaScan uses the rear camera and flash to read your pulse from your fingertip. No photos or video are saved.</string>
+	<string>Wellumi uses the rear camera and flash to read your pulse from your fingertip. No photos or video are saved.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>VitaScan can read heart rate and blood pressure from Apple Health to show your full history.</string>
+	<string>Wellumi can read heart rate and blood pressure from Apple Health to show your full history.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>VitaScan can save your heart rate, breathing rate and cuff blood pressure readings to Apple Health.</string>
+	<string>Wellumi can save your heart rate, breathing rate and cuff blood pressure readings to Apple Health.</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>VitaScan</string>
+	<string>Wellumi</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>vitascan</string>
+	<string>wellumi</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

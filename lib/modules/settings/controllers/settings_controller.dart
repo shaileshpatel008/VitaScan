@@ -188,7 +188,7 @@ class SettingsController extends GetxController {
     AppMessenger.alert(
       title: '${AppConstants.appName} ${AppConstants.appVersion}',
       message:
-          'VitaScan estimates heart rate, heart-rate variability, stress, breathing rate, oxygen and blood pressure '
+          'Wellumi estimates heart rate, heart-rate variability, stress, breathing rate, oxygen and blood pressure '
           'from your fingertip using the phone camera.\n\n'
           'It is a wellness app, not a medical device. It does not diagnose or treat any condition. '
           'Always follow your doctor\'s advice and use a validated cuff for medical decisions.',

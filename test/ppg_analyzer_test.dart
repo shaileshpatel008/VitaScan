@@ -1,11 +1,11 @@
 import 'dart:math' as math;
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vitascan/core/utils/health_classifier.dart';
-import 'package:vitascan/core/utils/ppg/ppg_analyzer.dart';
-import 'package:vitascan/core/utils/ppg/ppg_models.dart';
-import 'package:vitascan/core/utils/ppg/vitals_estimator.dart';
-import 'package:vitascan/data/models/calibration_point.dart';
+import 'package:wellumi/core/utils/health_classifier.dart';
+import 'package:wellumi/core/utils/ppg/ppg_analyzer.dart';
+import 'package:wellumi/core/utils/ppg/ppg_models.dart';
+import 'package:wellumi/core/utils/ppg/vitals_estimator.dart';
+import 'package:wellumi/data/models/calibration_point.dart';
 
 /// Simulates what the camera sees through a fingertip: a bright red frame whose
 /// brightness dips with every heartbeat, with frame-time jitter, sensor noise,

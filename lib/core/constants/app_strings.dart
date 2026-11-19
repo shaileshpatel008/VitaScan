@@ -16,7 +16,7 @@ class AppStrings {
   static const consentTitle = 'How your data is used';
   static const consentWellnessTitle = 'For wellness, not diagnosis';
   static const consentWellnessBody =
-      'VitaScan is not a medical device. Blood pressure and oxygen values are estimates. Always confirm with a doctor.';
+      'Wellumi is not a medical device. Blood pressure and oxygen values are estimates. Always confirm with a doctor.';
   static const consentCameraTitle = 'Camera only during a scan';
   static const consentCameraBody =
       'The rear camera and flash are used only while you scan. No photos or video are saved.';
@@ -32,7 +32,7 @@ class AppStrings {
   // Permissions
   static const cameraPermissionTitle = 'Camera access needed';
   static const cameraPermissionBody =
-      'VitaScan reads your pulse through the camera and flash. Nothing is recorded or saved.';
+      'Wellumi reads your pulse through the camera and flash. Nothing is recorded or saved.';
   static const cameraPermissionDeniedBody =
       'Camera access is turned off. Open Settings and allow Camera to take a scan.';
   static const openSettings = 'Open Settings';
@@ -90,7 +90,7 @@ class AppStrings {
   static const reminderOnMessage = 'Reminder set. We\'ll nudge you at the right time.';
   static const reminderOffMessage = 'Reminder turned off.';
   static const notificationDenied =
-      'Notifications are turned off for VitaScan. Enable them in Settings to get reminders.';
+      'Notifications are turned off for Wellumi. Enable them in Settings to get reminders.';
   static const healthSyncOn = 'Health sync is on. New readings will be shared.';
   static const healthSyncFailed =
       'We couldn\'t connect to Health. Make sure Health Connect / Apple Health is installed and allowed.';
@@ -108,20 +108,20 @@ class AppStrings {
 
   // App updates
   static const updateTitle = 'A new version is ready';
-  static const updateBody = 'Update VitaScan to get the latest improvements and fixes. It only takes a moment.';
+  static const updateBody = 'Update Wellumi to get the latest improvements and fixes. It only takes a moment.';
   static const updateRequiredTitle = 'Please update to continue';
   static const updateRequiredBody =
-      'This version of VitaScan is no longer supported. Update now to keep your readings accurate and your data safe.';
+      'This version of Wellumi is no longer supported. Update now to keep your readings accurate and your data safe.';
   static const updateNow = 'Update now';
   static const updateLater = 'Later';
   static const updateDownloadedTitle = 'Update downloaded';
-  static const updateDownloadedBody = 'Restart VitaScan to finish installing. It takes just a few seconds.';
+  static const updateDownloadedBody = 'Restart Wellumi to finish installing. It takes just a few seconds.';
   static const updateRestart = 'Restart now';
-  static const updateUpToDate = 'You have the latest version of VitaScan.';
+  static const updateUpToDate = 'You have the latest version of Wellumi.';
   static const updateDownloading = 'Downloading the update in the background. You can keep using the app.';
   static const updateFailed = 'The update couldn\'t be downloaded. We\'ll try again later.';
   static const updateNotFromStore =
-      'This copy wasn\'t installed from the store, so it can\'t update itself. Install VitaScan from the store to get updates.';
+      'This copy wasn\'t installed from the store, so it can\'t update itself. Install Wellumi from the store to get updates.';
   static const updateCheckFailed = 'We couldn\'t check for updates. Please check your internet connection.';
 
   // Generic

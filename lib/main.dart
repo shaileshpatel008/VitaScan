@@ -19,11 +19,11 @@ Future<void> main() async {
     ),
   );
   await DependencyInjection.init();
-  runApp(const VitaScanApp());
+  runApp(const WellumiApp());
 }
 
-class VitaScanApp extends StatelessWidget {
-  const VitaScanApp({super.key});
+class WellumiApp extends StatelessWidget {
+  const WellumiApp({super.key});
 
   @override
   Widget build(BuildContext context) {

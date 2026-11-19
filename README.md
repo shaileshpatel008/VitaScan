@@ -1,6 +1,6 @@
-# VitaScan: fingertip vitals app (Flutter + GetX)
+# Wellumi: fingertip vitals app (Flutter + GetX)
 
-VitaScan reads the pulse through the phone's **rear camera and flash** (photoplethysmography, PPG).
+Wellumi reads the pulse through the phone's **rear camera and flash** (photoplethysmography, PPG).
 It needs no hardware and no paid APIs. Users can also enter readings from a BP cuff, which are stored
 and used to **calibrate** the BP estimate for that person.
 
@@ -12,7 +12,7 @@ and used to **calibrate** the BP estimate for that person.
 | Blood pressure | Pulse-shape model + profile + personal cuff calibration | **Estimate** label |
 | SpO₂ | Red/blue ratio-of-ratios | **Beta** label |
 
-> VitaScan is a **wellness** app, not a medical device. Keep the "Estimate"/"Beta" labels and the
+> Wellumi is a **wellness** app, not a medical device. Keep the "Estimate"/"Beta" labels and the
 > disclaimers, and avoid medical claims in store listings.
 
 ---

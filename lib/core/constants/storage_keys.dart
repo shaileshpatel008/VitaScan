@@ -1,6 +1,7 @@
 class StorageKeys {
   StorageKeys._();
 
+  // Internal identifier only (never shown to users).
   static const String encryptionKey = 'vitascan_hive_key';
 
   static const String profileBox = 'profile_box';

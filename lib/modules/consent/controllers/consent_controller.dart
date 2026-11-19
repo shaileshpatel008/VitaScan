@@ -38,7 +38,7 @@ class ConsentController extends GetxController {
     AppMessenger.alert(
       title: 'Terms & Privacy',
       message:
-          'VitaScan is a wellness app and does not diagnose, treat or prevent any disease. '
+          'Wellumi is a wellness app and does not diagnose, treat or prevent any disease. '
           'Your readings are stored encrypted on this phone. We do not sell or share your data. '
           'You can export or delete everything at any time from Profile → Data.',
       buttonText: 'Close',

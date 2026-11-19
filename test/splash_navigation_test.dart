@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:vitascan/data/models/app_settings.dart';
-import 'package:vitascan/data/models/user_profile.dart';
-import 'package:vitascan/data/repositories/settings_repository.dart';
-import 'package:vitascan/data/repositories/user_repository.dart';
-import 'package:vitascan/modules/splash/bindings/splash_binding.dart';
-import 'package:vitascan/modules/splash/views/splash_view.dart';
-import 'package:vitascan/routes/app_routes.dart';
+import 'package:wellumi/data/models/app_settings.dart';
+import 'package:wellumi/data/models/user_profile.dart';
+import 'package:wellumi/data/repositories/settings_repository.dart';
+import 'package:wellumi/data/repositories/user_repository.dart';
+import 'package:wellumi/modules/splash/bindings/splash_binding.dart';
+import 'package:wellumi/modules/splash/views/splash_view.dart';
+import 'package:wellumi/routes/app_routes.dart';
 
 class _FakeSettings extends GetxService implements SettingsRepository {
   @override
