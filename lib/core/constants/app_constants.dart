@@ -19,9 +19,9 @@ class AppConstants {
   static const bool showSpo2Estimate = false;
 
   // ---------------- Legal ----------------
-  /// Public pages hosted on GitHub Pages (see legal/README.md for setup).
-  static const String privacyPolicyUrl = 'https://shaileshpatel008.github.io/wellumi-legal/privacy-policy.html';
-  static const String termsUrl = 'https://shaileshpatel008.github.io/wellumi-legal/terms.html';
+  /// Public pages hosted on GitHub Pages (docs/ folder; see docs/README.md).
+  static const String privacyPolicyUrl = 'https://shaileshpatel008.github.io/VitaScan/privacy-policy.html';
+  static const String termsUrl = 'https://shaileshpatel008.github.io/VitaScan/terms.html';
 
   // ---------------- Scan ----------------
   /// Seconds of good finger contact needed for one measurement.

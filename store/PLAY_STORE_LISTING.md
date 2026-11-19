@@ -111,7 +111,7 @@ policy. **Website:** your GitHub Pages index (optional).
 
 | Form | Answer |
 |---|---|
-| **Privacy policy** | `https://shaileshpatel008.github.io/wellumi-legal/privacy-policy.html` (publish it first; see `legal/README.md`) |
+| **Privacy policy** | `https://shaileshpatel008.github.io/VitaScan/privacy-policy.html` (published from this repo's `docs/` folder; see `docs/README.md`) |
 | **Ads** | No, the app does not contain ads |
 | **App access** | All functionality is available without special access (no login) |
 | **Content rating** | Fill in the IARC questionnaire honestly; Wellumi has no violence, sexual content, gambling, user chat or purchases. Expect "Everyone"/"3+" |
@@ -150,7 +150,7 @@ Your account was created before November 2023, so the 12-tester / 14-day closed 
 
 ## 7. Before submitting: checklist
 
-- [ ] Legal pages published and placeholders filled (`legal/README.md`)
+- [ ] Legal pages live (`docs/README.md`); contact email added
 - [ ] Upload key created and backed up; `android/key.properties` in place
 - [ ] Version number raised if a build was uploaded before
 - [ ] Tested an internal-testing install on real phones

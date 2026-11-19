@@ -222,4 +222,4 @@ dart run flutter_native_splash:create  # launch splash (iOS, Android incl. Andro
 
 - Google Play: step-by-step guide, listing text and form answers in
   [`store/PLAY_STORE_LISTING.md`](store/PLAY_STORE_LISTING.md).
-- Privacy Policy & Terms pages: [`legal/README.md`](legal/README.md).
+- Privacy Policy & Terms pages: [`docs/README.md`](docs/README.md).
