@@ -177,3 +177,49 @@ dart run flutter_native_splash:create  # launch splash (iOS, Android incl. Andro
 
 `flutter_native_splash` reformats `AndroidManifest.xml` and can drop
 `android:screenOrientation="portrait"`; check that line is still there afterwards.
+
+---
+
+## Feature switches (`lib/core/constants/app_constants.dart`)
+
+| Switch | v1 value | What it controls |
+|---|---|---|
+| `enableHealthSync` | `false` | Health Connect / Apple Health sync and its Profile toggle |
+| `enableCloudBackup` | `false` | Cloud backup toggle (needs `backupBaseUrl` and a server) |
+| `showSpo2Estimate` | `false` | Camera SpO₂ estimate in results, PDF and stored readings |
+
+### Re-enabling Health Connect (Android)
+
+1. Set `enableHealthSync = true`.
+2. In `android/app/src/main/AndroidManifest.xml`, change each health permission that has
+   `tools:node="remove"` into a normal declaration, keeping only the **WRITE**
+   permissions (the app never reads from Health Connect):
+   `WRITE_HEART_RATE`, `WRITE_RESPIRATORY_RATE`, `WRITE_BLOOD_PRESSURE`.
+3. Add back, inside `<application>`, the activity-alias Health Connect uses to show
+   your privacy policy, and add to `<queries>` the Health Connect package:
+   ```xml
+   <activity-alias
+       android:name="ViewPermissionUsageActivity"
+       android:exported="true"
+       android:targetActivity=".MainActivity"
+       android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+       <intent-filter>
+           <action android:name="android.intent.action.VIEW_PERMISSION_USAGE"/>
+           <category android:name="android.intent.category.HEALTH_PERMISSIONS"/>
+       </intent-filter>
+   </activity-alias>
+   ```
+   ```xml
+   <package android:name="com.google.android.apps.healthdata"/>
+   ```
+   Make the app show the privacy policy when opened this way.
+4. Update the privacy policy, then complete the Health Connect questions in Play
+   Console's Health apps declaration before releasing.
+
+---
+
+## Publishing
+
+- Google Play: step-by-step guide, listing text and form answers in
+  [`store/PLAY_STORE_LISTING.md`](store/PLAY_STORE_LISTING.md).
+- Privacy Policy & Terms pages: [`legal/README.md`](legal/README.md).

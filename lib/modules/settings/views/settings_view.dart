@@ -150,6 +150,12 @@ class SettingsView extends GetView<SettingsController> {
               onTap: c.openTerms,
               trailing: const Icon(Icons.open_in_new_rounded, size: 18, color: AppColors.muted),
             ).entrance(11),
+            SettingsTile(
+              icon: Icons.code_rounded,
+              title: 'Open-source licences',
+              onTap: () => c.showLicences(context),
+              trailing: chevron,
+            ).entrance(12),
             const SizedBox(height: 16),
             Text(
               '${AppConstants.appName} v${c.appVersion} (${c.buildNumber}) · For wellness use only, not a medical device.',

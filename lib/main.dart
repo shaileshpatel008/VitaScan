@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +14,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Fonts ship inside the app (assets/google_fonts); never fetch them from the network.
   GoogleFonts.config.allowRuntimeFetching = false;
+  LicenseRegistry.addLicense(() async* {
+    for (final (font, file) in [('DM Sans', 'OFL-DMSans.txt'), ('Fraunces', 'OFL-Fraunces.txt')]) {
+      yield LicenseEntryWithLineBreaks([font], await rootBundle.loadString('assets/google_fonts/$file'));
+    }
+  });
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(

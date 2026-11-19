@@ -62,6 +62,9 @@ class SettingsController extends GetxController {
 
   Future<void> openTerms() => _openLink(AppConstants.termsUrl);
 
+  void showLicences(BuildContext context) =>
+      showLicensePage(context: context, applicationName: AppConstants.appName, applicationVersion: appVersion);
+
   Future<void> _openLink(String url) async {
     final ok = await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
     if (!ok) AppMessenger.error(AppStrings.somethingWrong);
