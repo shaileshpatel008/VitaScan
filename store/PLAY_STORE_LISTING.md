@@ -15,7 +15,7 @@ keytool -genkey -v -keystore ~/wellumi-upload-keystore.jks \
   -keyalg RSA -keysize 2048 -validity 10000 -alias upload
 ```
 
-Then create `android/key.properties` (this file stays on your Mac only):
+Then copy `android/key.properties.example` to `android/key.properties` and fill in your passwords (this file stays on your Mac only):
 
 ```properties
 storePassword=YOUR_STORE_PASSWORD
