@@ -62,6 +62,42 @@ class SettingsView extends GetView<SettingsController> {
                 ],
               ),
             ).entrance(0),
+            const SectionLabel('Premium'),
+            // Built inline (not in a Builder) so the surrounding Obx tracks Premium state.
+            (() {
+              final p = c.purchases;
+              final a = p.allowance;
+              return Column(
+                children: [
+                  SettingsTile(
+                    icon: Icons.workspace_premium_outlined,
+                    title: p.isPremium ? '${AppConstants.appName} Premium' : 'Go Premium',
+                    subtitle: p.isPremium
+                        ? 'Active · ${p.plan.value.label}'
+                        : a.canScan
+                        ? '${a.remaining} of ${a.limit} free scans left · Unlimited scans with Premium'
+                        : 'Free scans used · Upgrade to keep scanning',
+                    onTap: c.openPremium,
+                    trailing: chevron,
+                  ),
+                  if (p.plan.value.isSubscription)
+                    SettingsTile(
+                      icon: Icons.manage_accounts_outlined,
+                      title: 'Manage subscription',
+                      onTap: p.manageSubscription,
+                      trailing: const Icon(Icons.open_in_new_rounded, size: 18, color: AppColors.muted),
+                    ),
+                  SettingsTile(
+                    icon: Icons.restore_rounded,
+                    title: 'Restore purchases',
+                    onTap: p.restoring.value ? null : p.restore,
+                    trailing: p.restoring.value
+                        ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2))
+                        : chevron,
+                  ),
+                ],
+              );
+            })().entrance(1),
             const SectionLabel('Reminders'),
             SettingsTile(
               icon: Icons.wb_sunny_outlined,

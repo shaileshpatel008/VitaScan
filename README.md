@@ -218,6 +218,20 @@ dart run flutter_native_splash:create  # launch splash (iOS, Android incl. Andro
 
 ---
 
+## Wellumi Premium (in-app purchases, no login)
+
+- `PurchaseService` (`lib/core/services/purchase_service.dart`) uses Google Play Billing /
+  StoreKit through `in_app_purchase`. Purchases belong to the user's store account, so no
+  login is needed and they restore on reinstall or a new phone.
+- Products: `wellumi_premium_monthly`, `wellumi_premium_yearly` (subscriptions) and
+  `wellumi_premium_lifetime` (one-time). Free scans: `AppConstants.freeScanLimit` (3).
+- `ScanGateMiddleware` guards the scan routes and opens `/premium` once free scans are used.
+  Only successful scans count; the counter lives in secure storage.
+- Android re-checks active purchases on each launch, so expired subscriptions end
+  automatically. **Before an iOS launch** add receipt validation (server or RevenueCat):
+  StoreKit restores also return expired subscriptions.
+- Play Console setup and testing: `store/PLAY_STORE_LISTING.md` section 4b.
+
 ## Publishing
 
 - Google Play: step-by-step guide, listing text and form answers in

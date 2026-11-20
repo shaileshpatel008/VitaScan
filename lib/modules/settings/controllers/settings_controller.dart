@@ -9,6 +9,7 @@ import '../../../core/services/app_update_service.dart';
 import '../../../core/services/export_service.dart';
 import '../../../core/services/health_sync_service.dart';
 import '../../../core/services/notification_service.dart';
+import '../../../core/services/purchase_service.dart';
 import '../../../core/services/storage_service.dart';
 import '../../../core/utils/app_logger.dart';
 import '../../../core/utils/app_messenger.dart';
@@ -57,6 +58,12 @@ class SettingsController extends GetxController {
   bool get checkingUpdate => _updates.checking.value;
 
   void checkForUpdates() => _updates.checkManually();
+
+  // ---------------- Premium ----------------
+
+  PurchaseService get purchases => Get.find<PurchaseService>();
+
+  void openPremium() => Get.toNamed(AppRoutes.premium);
 
   Future<void> openPrivacyPolicy() => _openLink(AppConstants.privacyPolicyUrl);
 

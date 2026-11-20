@@ -5,6 +5,7 @@ class AppConstants {
 
   static const String appName = 'Wellumi';
   static const String appVersion = '1.0.0';
+  static const String androidPackageName = 'com.shaileshpatel008.wellumiapp';
 
   // ---------------- Feature switches ----------------
   /// Health Connect / Apple Health sync. Hidden in v1: turning it on also needs
@@ -17,6 +18,16 @@ class AppConstants {
 
   /// Camera SpO2 is the least reliable estimate; hidden for the first release.
   static const bool showSpo2Estimate = false;
+
+  // ---------------- Premium (in-app purchases) ----------------
+  /// Successful scans allowed before Premium is required.
+  static const int freeScanLimit = 3;
+
+  /// Product IDs: create these exact IDs in Play Console → Monetize.
+  static const String premiumMonthlyId = 'wellumi_premium_monthly';
+  static const String premiumYearlyId = 'wellumi_premium_yearly';
+  static const String premiumLifetimeId = 'wellumi_premium_lifetime';
+  static const Set<String> premiumProductIds = {premiumMonthlyId, premiumYearlyId, premiumLifetimeId};
 
   // ---------------- Legal ----------------
   /// Public pages hosted on GitHub Pages (docs/ folder; see docs/README.md).

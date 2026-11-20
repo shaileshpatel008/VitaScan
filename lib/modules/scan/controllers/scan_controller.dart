@@ -12,6 +12,7 @@ import '../../../core/constants/app_strings.dart';
 import '../../../core/services/camera_ppg_service.dart';
 import '../../../core/services/health_sync_service.dart';
 import '../../../core/services/permission_service.dart';
+import '../../../core/services/purchase_service.dart';
 import '../../../core/utils/app_logger.dart';
 import '../../../core/utils/app_messenger.dart';
 import '../../../core/utils/ppg/ppg_analyzer.dart';
@@ -204,7 +205,12 @@ class ScanController extends GetxController with WidgetsBindingObserver {
     final reading = _buildReading(result);
     await _readings.save(reading);
     if (_settings.current.healthSyncEnabled) unawaited(_health.sync(reading));
-    Get.offNamed(AppRoutes.result, arguments: {'readingId': reading.id, 'fresh': true});
+    // Only successful scans use up a free scan.
+    final usedLastFreeScan = await Get.find<PurchaseService>().recordSuccessfulScan();
+    Get.offNamed(
+      AppRoutes.result,
+      arguments: {'readingId': reading.id, 'fresh': true, 'lastFreeScan': usedLastFreeScan},
+    );
   }
 
   VitalReading _buildReading(PpgAnalysisResult r) {

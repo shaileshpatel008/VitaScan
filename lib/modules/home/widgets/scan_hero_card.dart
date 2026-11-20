@@ -7,10 +7,22 @@ import '../../../widgets/app_button.dart';
 import '../../../widgets/heartbeat.dart';
 
 class ScanHeroCard extends StatelessWidget {
-  const ScanHeroCard({super.key, required this.onStart, required this.firstScan});
+  const ScanHeroCard({
+    super.key,
+    required this.onStart,
+    required this.firstScan,
+    this.statusLabel,
+    this.locked = false,
+  });
 
   final VoidCallback onStart;
   final bool firstScan;
+
+  /// e.g. "2 free scans left" or "Premium".
+  final String? statusLabel;
+
+  /// Free scans used up: the button leads to Premium.
+  final bool locked;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +73,26 @@ class ScanHeroCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          AppButton(label: 'Start scan', variant: AppButtonVariant.light, height: 48, onPressed: onStart),
+          if (statusLabel != null) ...[
+            Row(
+              children: [
+                Icon(
+                  locked ? Icons.lock_outline_rounded : Icons.workspace_premium_outlined,
+                  size: 16,
+                  color: Colors.white.withValues(alpha: 0.9),
+                ),
+                const SizedBox(width: 6),
+                Text(statusLabel!, style: AppTextStyles.body(13, color: Colors.white.withValues(alpha: 0.9))),
+              ],
+            ),
+            const SizedBox(height: 10),
+          ],
+          AppButton(
+            label: locked ? 'Unlock unlimited scans' : 'Start scan',
+            variant: AppButtonVariant.light,
+            height: 48,
+            onPressed: onStart,
+          ),
         ],
       ),
     );

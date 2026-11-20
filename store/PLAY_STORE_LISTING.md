@@ -53,7 +53,7 @@ Wellumi: Heart Rate & Stress
 Check heart rate, HRV, stress & breathing in 45 seconds with your fingertip.
 ```
 
-**Full description** (3172/4000)
+**Full description** (3527/4000)
 ```
 Wellumi turns your phone into a calm, private daily check-in for your well-being. Rest your fingertip on the rear camera and flash for 45 seconds, and Wellumi reads the tiny changes in light caused by each heartbeat. No wearable, no extra device, no sign-up.
 
@@ -92,6 +92,13 @@ REPORTS AND REMINDERS
 • Share it with your doctor or family, or save and print it
 • Morning and evening reminders at times you choose, to build a daily habit
 • Export all your readings as a CSV file at any time
+
+FREE TO TRY, PREMIUM TO GO FURTHER
+• Your first 3 scans are free
+• Wellumi Premium unlocks unlimited scans and an ad-free experience
+• Choose a monthly or yearly subscription, or a one-time lifetime purchase
+• Your history, cuff readings, reports and data export always stay available
+• Purchases are restored with your Google account; no sign-up needed
 
 PRIVATE BY DESIGN
 • No account or sign-up needed
@@ -139,6 +146,47 @@ policy. **Website:** your GitHub Pages index (optional).
 | **Health apps declaration** | Required. Select the options that describe health/wellness tracking of vital signs (heart rate, stress, breathing, blood pressure estimates). State that the app is **not** a regulated medical device and that it does **not** use Health Connect in this version |
 | **Data safety** | See section 5 |
 
+## 4b. In-app purchases: Wellumi Premium (set up before uploading the release)
+
+The app sells three products. The IDs must match **exactly** (they're in
+`lib/core/constants/app_constants.dart`).
+
+| Product | Type in Play Console | ID | Suggested setup |
+|---|---|---|---|
+| Premium Monthly | Subscription | `wellumi_premium_monthly` | Base plan: auto-renewing, billing period **1 month** |
+| Premium Yearly | Subscription | `wellumi_premium_yearly` | Base plan: auto-renewing, **1 year**. Optional offer: free trial (e.g. 1 week) |
+| Premium Lifetime | One-time product (in-app product) | `wellumi_premium_lifetime` | One-time purchase |
+
+Steps:
+1. **Set up a payments profile:** Play Console → Settings → Payments profile (needed to sell
+   anything; personal accounts can sell). Google's fee is 15% of your first US$1M per year.
+2. **Upload a build first:** Play Console only allows creating products after an `.aab` that
+   includes billing has been uploaded (internal testing is enough).
+3. **Create the subscriptions:** Monetize → Products → Subscriptions → Create subscription, with
+   the IDs above. Add a base plan to each, set prices (Play converts them to other currencies),
+   and **activate** the base plans.
+4. **Create the lifetime product:** Monetize → Products → One-time products / In-app products →
+   Create, ID `wellumi_premium_lifetime`, set the price, **Activate**.
+5. **Test without being charged:** Settings → License testing → add your Gmail address (and
+   testers'). Install the app **from the internal-testing link** (purchases don't work in a
+   `flutter run` build). Test buying, cancelling, *Restore purchases*, and reinstalling.
+6. The app shows plans in this order: Yearly (with "Best value" and an automatic "Save X%"
+   badge), Monthly, Lifetime. A free trial offer is detected automatically and the button
+   changes to "Start free trial".
+
+How it behaves:
+- 3 **successful** scans are free (failed scans don't count). After that, any scan button leads
+  to the Premium screen. History, cuff readings, reports, export and delete always stay free.
+- Premium is re-checked with Google Play on each app launch, so cancelled or expired
+  subscriptions end automatically, and purchases come back after a reinstall or on a new phone
+  with the same Google account.
+- Profile → Premium has *Go Premium*, *Restore purchases* and *Manage subscription*.
+- `PurchaseService.adsRemoved` is ready for when ads are added: show ads only when it's false.
+
+Data safety: purchase status is checked on the phone and isn't sent to any server of yours, so
+the "No data collected" answer stays the same. Re-check Google's Data safety guidance for
+billing when you submit, and update the form if you add a server or analytics.
+
 ## 5. Data safety form
 
 Google counts data as "collected" only when it's **sent off the device**. Wellumi keeps
@@ -172,4 +220,6 @@ Your account was created before November 2023, so the 12-tester / 14-day closed 
 - [ ] Version number raised if a build was uploaded before
 - [ ] Tested an internal-testing install on real phones
 - [ ] Screenshots taken
+- [ ] Payments profile set up; the 3 Premium products created and activated with the exact IDs
+- [ ] Purchases tested with a license tester (buy, cancel, restore, reinstall)
 - [ ] All App content forms completed (Play Console shows green ticks)

@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
+import '../../../core/services/purchase_service.dart';
 import '../../../core/utils/ppg/signal_math.dart';
+import '../../../core/utils/premium_policy.dart';
 import '../../../data/models/user_profile.dart';
 import '../../../data/models/vital_reading.dart';
 import '../../../data/repositories/calibration_repository.dart';
@@ -58,6 +60,17 @@ class HomeController extends GetxController {
     return 'Stable';
   }
 
+  ScanAllowance get allowance => Get.find<PurchaseService>().allowance;
+
+  /// Short status for the scan card: Premium, free scans left, or none left.
+  String get scanStatus {
+    final a = allowance;
+    if (a.isPremium) return 'Premium · unlimited scans';
+    if (!a.canScan) return 'You\'ve used your ${a.limit} free scans';
+    return a.remaining == 1 ? '1 free scan left' : '${a.remaining} free scans left';
+  }
+
+  /// The scan gate sends locked users to the Premium screen.
   void startScan() => Get.toNamed(AppRoutes.scanGuide);
 
   void openLatest() {

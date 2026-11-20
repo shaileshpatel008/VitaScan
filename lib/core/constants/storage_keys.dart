@@ -12,4 +12,9 @@ class StorageKeys {
   static const String profile = 'profile';
   static const String settings = 'settings';
   static const String updateSnooze = 'update_snooze';
+  static const String premium = 'premium';
+
+  /// Kept in secure storage (not the Hive boxes) so "Delete all my data" doesn't
+  /// reset the free-scan allowance.
+  static const String freeScansUsed = 'free_scans_used';
 }

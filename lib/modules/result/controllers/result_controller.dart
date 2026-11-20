@@ -20,6 +20,7 @@ class ResultController extends GetxController {
 
   late final String readingId;
   late final bool isFresh;
+  late final bool lastFreeScan;
   final reading = Rxn<VitalReading>();
 
   @override
@@ -28,6 +29,7 @@ class ResultController extends GetxController {
     final args = (Get.arguments as Map?) ?? const {};
     readingId = args['readingId'] as String? ?? '';
     isFresh = args['fresh'] as bool? ?? false;
+    lastFreeScan = args['lastFreeScan'] as bool? ?? false;
     reading.value = _readings.byId(readingId);
   }
 
@@ -57,7 +59,10 @@ class ResultController extends GetxController {
       await AppMessenger.alert(title: AppStrings.highBpWarningTitle, message: AppStrings.highBpWarningBody);
     } else if (r.heartRate != null && HeartRateStatus.isUnusual(r.heartRate!)) {
       await AppMessenger.alert(title: AppStrings.unusualHrTitle, message: AppStrings.unusualHrBody);
-    } else if (!r.isCalibrated && _calibration.count == 0) {
+    }
+    if (lastFreeScan) {
+      AppMessenger.info(AppStrings.premiumLastFreeScan, title: 'Free scans used');
+    } else if (!r.isCalibrated && _calibration.count == 0 && r.bpCategory?.needsAttention != true) {
       AppMessenger.info(
         'Have a BP cuff nearby? Add a reading in the next 10 minutes to make your estimates personal.',
         title: 'Tip: calibrate your BP',

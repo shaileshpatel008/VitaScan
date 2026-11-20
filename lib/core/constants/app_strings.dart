@@ -124,6 +124,26 @@ class AppStrings {
       'This copy wasn\'t installed from the store, so it can\'t update itself. Install Wellumi from the store to get updates.';
   static const updateCheckFailed = 'We couldn\'t check for updates. Please check your internet connection.';
 
+  // Premium
+  static const premiumTitle = 'Unlock unlimited scans';
+  static const premiumSubtitle = 'Keep checking in on your heart, stress and breathing every day.';
+  static const premiumWelcomeTitle = 'Welcome to Premium!';
+  static const premiumWelcomeBody = 'Unlimited scans are unlocked. Thank you for supporting Wellumi.';
+  static const premiumPending =
+      'Your payment is being processed. Premium unlocks automatically as soon as Google Play confirms it.';
+  static const premiumCancelled = 'No problem. You can upgrade any time from Profile.';
+  static const premiumFailed = 'The purchase didn\'t go through and you haven\'t been charged. Please try again.';
+  static const premiumStoreUnavailable =
+      'Google Play isn\'t available right now. Check your internet connection and that you\'re signed in to Play.';
+  static const premiumPlansUnavailable = 'Plans couldn\'t be loaded right now. Please try again in a moment.';
+  static const premiumRestored = 'Your Premium purchase has been restored.';
+  static const premiumNothingToRestore = 'We couldn\'t find a Premium purchase on this Google account.';
+  static const premiumLastFreeScan = 'That was your last free scan. Upgrade to Premium to keep scanning.';
+  static const premiumSubscriptionTerms =
+      'Subscriptions renew automatically at the price shown until cancelled. Cancel any time in Google Play → '
+      'Payments & subscriptions, at least 24 hours before the renewal date. Lifetime is a one-time payment. '
+      'Payment is charged to your Google Play account.';
+
   // Generic
   static const somethingWrong = 'Something went wrong. Please try again.';
   static const noInternet = 'No internet connection. Please check your network.';

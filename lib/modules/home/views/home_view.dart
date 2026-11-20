@@ -51,7 +51,12 @@ class HomeView extends GetView<HomeController> {
               ],
             ).entrance(0),
             const SizedBox(height: 16),
-            ScanHeroCard(onStart: c.startScan, firstScan: latest == null).entrance(1),
+            ScanHeroCard(
+              onStart: c.startScan,
+              firstScan: latest == null,
+              statusLabel: c.scanStatus,
+              locked: !c.allowance.canScan,
+            ).entrance(1),
             const SizedBox(height: 18),
             if (latest == null)
               AppCard(

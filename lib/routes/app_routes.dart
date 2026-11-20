@@ -9,4 +9,5 @@ abstract class AppRoutes {
   static const poorSignal = '/scan/poor-signal';
   static const result = '/result';
   static const calibration = '/calibration';
+  static const premium = '/premium';
 }
