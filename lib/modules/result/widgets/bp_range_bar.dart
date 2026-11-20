@@ -23,6 +23,7 @@ class BpRangeBar extends StatelessWidget {
             child: const SizedBox(
               height: 8,
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(flex: 3, child: ColoredBox(color: AppColors.bpNormal)),
                   SizedBox(width: 2),

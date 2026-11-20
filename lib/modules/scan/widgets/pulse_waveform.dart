@@ -42,7 +42,10 @@ class PulseWaveform extends StatelessWidget {
                         style: AppTextStyles.body(13, color: Colors.white.withValues(alpha: 0.6)),
                       ),
                     )
-                  : CustomPaint(key: const ValueKey('wave'), painter: _WavePainter(points)),
+                  : SizedBox.expand(
+                      key: const ValueKey('wave'),
+                      child: CustomPaint(painter: _WavePainter(points)),
+                    ),
             ),
           ),
         ],

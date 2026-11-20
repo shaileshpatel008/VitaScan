@@ -1,0 +1,24 @@
+<!doctype html>
+<!-- Frames a raw app screenshot with a caption for the Play listing (1080x1920).
+     Usage: screenshot_frame.html?img=../screenshots/raw/02_scanning.png&title=...&sub=...&dark=1 -->
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Fraunces;src:url(../../assets/google_fonts/Fraunces-SemiBold.ttf);font-weight:600}
+@font-face{font-family:DM Sans;src:url(../../assets/google_fonts/DMSans-Medium.ttf);font-weight:500}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+body{background:linear-gradient(160deg,#16897D 0%,#0F6B62 55%,#0A4F49 100%);font-family:'DM Sans';color:#fff;position:relative}
+body::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;right:-380px;top:-420px;background:rgba(255,255,255,.07)}
+.cap{position:absolute;top:118px;left:80px;right:80px;text-align:center}
+h1{font-family:Fraunces;font-weight:600;font-size:76px;line-height:1.08;margin:0;letter-spacing:-.5px}
+p{font-size:38px;margin:26px 0 0;opacity:.88;line-height:1.3}
+.phone{position:absolute;left:50%;top:410px;width:820px;height:1430px;transform:translateX(-50%);border-radius:64px;background:#0d1c1a;padding:18px;box-sizing:border-box;box-shadow:0 40px 90px rgba(0,0,0,.35)}
+.phone img{width:100%;height:100%;border-radius:48px;display:block;object-fit:cover;object-position:top}
+</style></head><body>
+<div class="cap"><h1 id="t"></h1><p id="s"></p></div>
+<div class="phone"><img id="i"></div>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('t').textContent=q.get('title');
+document.getElementById('s').textContent=q.get('sub');
+document.getElementById('i').src=q.get('img');
+</script></body></html>

@@ -26,7 +26,9 @@ class PlanCard extends StatelessWidget {
     };
     final subtitle = p.plan == PremiumPlan.lifetime
         ? 'Pay once, keep Premium forever'
-        : [if (p.trial != null) p.trial!, 'then ${p.price} / ${p.period}'].join(', ');
+        : p.trial != null
+        ? '${p.trial}, then ${p.price} / ${p.period}'
+        : 'Billed every ${p.period}, cancel anytime';
 
     return Semantics(
       button: true,
