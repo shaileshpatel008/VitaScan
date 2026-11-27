@@ -19,6 +19,9 @@ class LocalDataSource {
   Map<dynamic, dynamic>? readPremium() => _storage.settingsBox.get(StorageKeys.premium) as Map?;
   Future<void> writePremium(Map<String, dynamic> map) => _storage.settingsBox.put(StorageKeys.premium, map);
 
+  Map<dynamic, dynamic>? readReviewPrompt() => _storage.settingsBox.get(StorageKeys.reviewPrompt) as Map?;
+  Future<void> writeReviewPrompt(Map<String, dynamic> map) => _storage.settingsBox.put(StorageKeys.reviewPrompt, map);
+
   List<Map<dynamic, dynamic>> readReadings() => _storage.readingsBox.values.whereType<Map>().toList();
   Future<void> writeReading(String id, Map<String, dynamic> map) => _storage.readingsBox.put(id, map);
   Future<void> deleteReading(String id) => _storage.readingsBox.delete(id);

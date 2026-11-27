@@ -4,7 +4,7 @@ class AppConstants {
   AppConstants._();
 
   static const String appName = 'Wellumi';
-  static const String appVersion = '1.0.0';
+  static const String appVersion = '1.0.1';
   static const String androidPackageName = 'com.shaileshpatel008.wellumiapp';
 
   // ---------------- Feature switches ----------------

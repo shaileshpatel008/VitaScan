@@ -53,7 +53,7 @@ Wellumi: Heart Rate & Stress
 Check heart rate, HRV, stress & breathing in 45 seconds with your fingertip.
 ```
 
-**Full description** (3527/4000)
+**Full description** (3617/4000)
 ```
 Wellumi turns your phone into a calm, private daily check-in for your well-being. Rest your fingertip on the rear camera and flash for 45 seconds, and Wellumi reads the tiny changes in light caused by each heartbeat. No wearable, no extra device, no sign-up.
 
@@ -93,12 +93,12 @@ REPORTS AND REMINDERS
 • Morning and evening reminders at times you choose, to build a daily habit
 • Export all your readings as a CSV file at any time
 
-FREE TO TRY, PREMIUM TO GO FURTHER
-• Your first 3 scans are free
-• Wellumi Premium unlocks unlimited scans and an ad-free experience
-• Choose a monthly or yearly subscription, or a one-time lifetime purchase
+FREE TO TRY, PREMIUM WHEN YOU'RE READY
+• Your first 3 scans are free, with every feature included
+• Wellumi Premium unlocks unlimited scans: monthly, yearly (with a 7-day free trial) or a one-time lifetime unlock
 • Your history, cuff readings, reports and data export always stay available
-• Purchases are restored with your Google account; no sign-up needed
+• No account needed: Premium is linked to your Google Play account and restores on a new phone
+• Cancel anytime in Google Play → Payments & subscriptions
 
 PRIVATE BY DESIGN
 • No account or sign-up needed
@@ -138,7 +138,7 @@ policy. **Website:** your GitHub Pages index (optional).
 | **Privacy policy** | `https://shaileshpatel008.github.io/VitaScan/docs/privacy-policy.html` (published from this repo's `docs/` folder; see `docs/README.md`) |
 | **Ads** | No, the app does not contain ads |
 | **App access** | All functionality is available without special access (no login) |
-| **Content rating** | Fill in the IARC questionnaire honestly; Wellumi has no violence, sexual content, gambling, user chat or purchases. Expect "Everyone"/"3+" |
+| **Content rating** | Fill in the IARC questionnaire honestly; Wellumi has no violence, sexual content, gambling or user chat. Answer **Yes** to digital purchases (Premium). Expect "Everyone"/"3+" |
 | **Target audience** | 18 and over only |
 | **News app** | No |
 | **Government app** | No |

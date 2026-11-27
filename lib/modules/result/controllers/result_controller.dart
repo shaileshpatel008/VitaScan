@@ -5,6 +5,7 @@ import 'package:share_plus/share_plus.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/extensions/datetime_extensions.dart';
+import '../../../core/services/review_service.dart';
 import '../../../core/utils/app_messenger.dart';
 import '../../../core/utils/health_classifier.dart';
 import '../../../data/models/vital_reading.dart';
@@ -13,10 +14,12 @@ import '../../../data/repositories/reading_repository.dart';
 import '../../../routes/app_routes.dart';
 
 class ResultController extends GetxController {
-  ResultController(this._readings, this._calibration);
+  ResultController(this._readings, this._calibration, {ReviewService? reviews})
+    : _reviews = reviews ?? (Get.isRegistered<ReviewService>() ? Get.find<ReviewService>() : null);
 
   final ReadingRepository _readings;
   final CalibrationRepository _calibration;
+  final ReviewService? _reviews;
 
   late final String readingId;
   late final bool isFresh;
@@ -49,6 +52,7 @@ class ResultController extends GetxController {
   Future<void> _healthChecks(VitalReading r) async {
     if (isClosed) return;
     final category = r.bpCategory;
+    final unusualHr = r.heartRate != null && HeartRateStatus.isUnusual(r.heartRate!);
     if (category == BpCategory.crisis) {
       await AppMessenger.alert(
         title: AppStrings.highBpWarningTitle,
@@ -57,12 +61,22 @@ class ResultController extends GetxController {
       );
     } else if (category == BpCategory.stage2) {
       await AppMessenger.alert(title: AppStrings.highBpWarningTitle, message: AppStrings.highBpWarningBody);
-    } else if (r.heartRate != null && HeartRateStatus.isUnusual(r.heartRate!)) {
+    } else if (unusualHr) {
       await AppMessenger.alert(title: AppStrings.unusualHrTitle, message: AppStrings.unusualHrBody);
     }
     if (lastFreeScan) {
       AppMessenger.info(AppStrings.premiumLastFreeScan, title: 'Free scans used');
-    } else if (!r.isCalibrated && _calibration.count == 0 && r.bpCategory?.needsAttention != true) {
+      return;
+    }
+    // Ask happy users for a rating, only after a clear, calm result.
+    final askedForReview =
+        await _reviews?.onScanResult(
+          signalQuality: r.signalQuality,
+          needsAttention: category?.needsAttention == true || unusualHr,
+        ) ??
+        false;
+    if (isClosed || askedForReview) return;
+    if (!r.isCalibrated && _calibration.count == 0 && r.bpCategory?.needsAttention != true) {
       AppMessenger.info(
         'Have a BP cuff nearby? Add a reading in the next 10 minutes to make your estimates personal.',
         title: 'Tip: calibrate your BP',

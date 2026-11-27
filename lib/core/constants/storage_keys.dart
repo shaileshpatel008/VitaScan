@@ -13,6 +13,7 @@ class StorageKeys {
   static const String settings = 'settings';
   static const String updateSnooze = 'update_snooze';
   static const String premium = 'premium';
+  static const String reviewPrompt = 'review_prompt';
 
   /// Kept in secure storage (not the Hive boxes) so "Delete all my data" doesn't
   /// reset the free-scan allowance.

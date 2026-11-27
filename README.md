@@ -232,6 +232,19 @@ dart run flutter_native_splash:create  # launch splash (iOS, Android incl. Andro
   StoreKit restores also return expired subscriptions.
 - Play Console setup and testing: `store/PLAY_STORE_LISTING.md` section 4b.
 
+## Ratings prompt
+
+Wellumi asks for a Play Store rating with Google's in-app review dialog
+(`ReviewService`, rules in `core/utils/review_policy.dart`):
+
+- only after a clear (signal quality 70%+), calm result: never after a high BP or unusual heart-rate warning
+- first on the 2nd good scan, then at most once every 90 days, 3 times in total
+- never on the scan that used the last free scan (the Premium notice shows instead)
+- Google Play applies its own quota, so the dialog may not appear every time
+
+Settings → **Rate Wellumi** always opens the store page. The dialog only appears in builds
+installed from Google Play (internal testing works); it never shows with `flutter run`.
+
 ## Publishing
 
 - Google Play: step-by-step guide, listing text and form answers in

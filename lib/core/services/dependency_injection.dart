@@ -16,6 +16,7 @@ import 'notification_service.dart';
 import 'pdf_report_service.dart';
 import 'permission_service.dart';
 import 'purchase_service.dart';
+import 'review_service.dart';
 import 'storage_service.dart';
 
 /// App-wide singletons, registered once before `runApp`.
@@ -43,5 +44,6 @@ class DependencyInjection {
     Get.put(ExportService(), permanent: true);
     await Get.putAsync(() => AppUpdateService(local).init(), permanent: true);
     await Get.putAsync(() => PurchaseService(local).init(), permanent: true);
+    Get.put(ReviewService(local).init(), permanent: true);
   }
 }
